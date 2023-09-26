@@ -10,6 +10,17 @@
 #define HRMR(k1,k2,k3,k4) &ht LSHFT k1  &ht LGUI k2  &ht LALT  k3  &ht LCTRL k4
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+        };
+    };
+};
+
+/ {
     behaviors {
         ht: hold_tap {
             label = "hold_tap";
@@ -45,7 +56,7 @@
         //│  Z       │  X       │  C       │  D       │  V       │   │  K       │  H       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp D      &kp V          &kp K      &kp H      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &lt 2 TAB   &kp SPACE     &kp BSPC   &lt 1 ENTER
+                                             &kp TAB   &lt 2 SPACE     &lt 1 BSPC  &kp ENTER
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
